@@ -13,13 +13,13 @@ ips[0]=`ifconfig ${interfacenames[0]} | grep 'inet addr'|
 ips[1]=`ifconfig ${interfacenames[1]} | grep 'inet addr://'|
                                      sed -e 's/ *inet addr://'| sed -e 's/ .*//'`
                                 
-ips={#ip0 $ip1}
+
 
 gatewayip=`route -n|grep '^0.0.0.0 '|awk '{print $2}'`
 
 cat <<EOF
-Interfaces ${interfacenames[0]} has ip address ${ips[0}] 
-Interfaces ${interfacenames[1]} has ip address ${ips[1}] 
+Interfaces ${interfacenames[0]} has ip address ${ips[0]}
+Interfaces ${interfacenames[1]} has ip address ${ips[1]} 
 
 My default getway is $gatewayip
 EOF
