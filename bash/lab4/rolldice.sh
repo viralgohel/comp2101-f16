@@ -5,7 +5,9 @@
 
 
 ###variables
+declare -i count
 count=0 #number of dies
+declare -i sides
 sides=0 #number of sides from 4 to 20 only 
 
 
